@@ -9,6 +9,9 @@ st.set_page_config(
     page_icon="💰",
 )
 st.title("💰Supply")
+st.write("""
+Due to the large amount of data, the search may take some time. Please wait...
+""")
 st.sidebar.success("💰Supply")
 
 def querying_pagination(query_string):
