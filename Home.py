@@ -51,3 +51,18 @@ st.write("""
  That same month of May will be remembered as Terra's collapse. The Terra token was supposed to maintain the peg of Terra's algorithmic stablecoin — until it didn't. Billions of dollars were wiped out from the market in just a couple of days and the flourishing ecosystem Terra had built was left for dead.
  """
 )
+
+st.write("")
+st.write("")
+st.write("")
+st.write("📓 Contact data")
+c1, c2 = st.columns(2)
+with c1:
+    st.info('**Twitter: [@daryoshali](https://twitter.com/daryoshali)**')
+with c2:
+    st.info('**Data: [Github](https://github.com/abolfazl7710)**')
+
+st.write("")
+st.write("")
+st.write("")
+st.write("Thanks for MetricsDAO and flipsidecrypto team")
