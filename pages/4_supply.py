@@ -647,7 +647,7 @@ when "bridge count" between 201 and 500 then 'bridge 201 - 500 time'
 when "bridge count" between 501 and 1000 then 'bridge 501 - 1000 time'
 else 'bridge more than 1000 time'
 end as bridge_count,
-count(user) as count_users
+count(user) as count
 from main
 group by 1
 """
@@ -1017,9 +1017,9 @@ cc1, cc2= st.columns([1, 1])
 with cc1:
  st.subheader('User categorize by count of bridge')
  st.caption('User categorize by count of bridge')
- st.bar_chart(df18, x='bridge_count', y = 'count_users', width = 400, height = 400)
+ st.bar_chart(df18, x='bridge_count', y = 'count', width = 400, height = 400)
 with cc2:
- fig = px.pie(df18, values='count_users', names='bridge_count', title='User categorize by count of bridge')
+ fig = px.pie(df18, values='count', names='bridge_count', title='User categorize by count of bridge')
  fig.update_layout(legend_title=None, legend_y=0.5)
  fig.update_traces(textinfo='percent+label', textposition='inside')
  st.plotly_chart(fig, use_container_width=True, theme='streamlit')
