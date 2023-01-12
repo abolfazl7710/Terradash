@@ -527,7 +527,7 @@ floor((sum(amount_out) over (order by date2))/1000) as vol_out
 from table4
   )
 select
-avg(datediff('day', date1, date2)) as vest
+avg(datediff('day', date1, date2)) as ves
 from table5 a join table6 b on a.vol_in=b.vol_out
 and b.vol_out!=0
 """
@@ -964,7 +964,7 @@ st.write("""
 
 
 st.metric(
-  value="{0:,.0f}".format(df15["vest"][0]),
+  value="{0:,.0f}".format(df15["ves"][0]),
   label="Vesting Schedule",
 )
 st.caption('volume in vs volume out')
