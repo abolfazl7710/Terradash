@@ -77,7 +77,7 @@ df2 = querying_pagination(df2_query)
 #total active wallet
 df3_query="""
 select
-count(TX_SENDER) as count
+count(TX_SENDER) as count_active
 FROM terra.core.fact_transactions
 """
 
@@ -109,7 +109,7 @@ st.write("""
  """
 )
 st.metric(
- value="{0:,.0f}".format(df3["count"][0]),
+ value="{0:,.0f}".format(df3["count_active"][0]),
  label="Total number of active wallet",
 )
 cc1, cc2= st.columns([1, 1])
