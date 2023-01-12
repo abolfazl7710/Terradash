@@ -462,7 +462,7 @@ group by 1,2,3
   )
 select 
 DISTINCT RECEIVER as user,
-sum("staking reward (Luna)"*price) as vol_reward
+sum("staking reward (Luna)"*price) as vol
 from main a join luna_price b on a.date=b.date
 group by 1
 order by 2 desc 
@@ -946,7 +946,7 @@ with cc1:
  st.bar_chart(df12, x='user', y = 'count_reward', width = 400, height = 400)
 with cc2:
  st.caption('Top 10 user by volume of rewarded')
- st.bar_chart(df13, x='user', y = 'vol_reward', width = 400, height = 400)
+ st.bar_chart(df13, x='user', y = 'vol', width = 400, height = 400)
 
 st.write("""
  # Richlist (Top 100) by wallet balance #
