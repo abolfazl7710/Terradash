@@ -280,7 +280,7 @@ group by 1
 BLOCK_TIMESTAMP::date as date,
 RECEIVER,
 TX_ID,
-sum(AMOUNT)/pow(10,6) as "staking reward (Luna)"
+sum(AMOUNT)/pow(10,6) as "staking reward"
 from terra.core.ez_transfers
 where MESSAGE_VALUE['@type'] ='/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward'
 and CURRENCY='uluna'
@@ -290,8 +290,8 @@ select
 a.date,
 count(DISTINCT tx_id) as count_reward,
 count(DISTINCT RECEIVER) as count_user,
-sum("staking reward (Luna)") as reward_luna,
-sum("staking reward (Luna)"*price) as reward_usd
+sum("staking reward") as reward_luna,
+sum("staking reward"*price) as reward_usd
 from main a join luna_price b on a.date=b.date
 group by 1
 """
