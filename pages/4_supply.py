@@ -259,7 +259,7 @@ group by 1
 select
 DISTINCT DELEGATOR_ADDRESS as user,
 action,
-sum(amount) as action_volume
+sum(amount) as volume
 from terra.core.ez_staking
 where TX_SUCCEEDED = TRUE
 group by 1,2
@@ -847,7 +847,7 @@ with cc1:
  fig.update_layout(legend_title=None, legend_y=0.5)
  st.plotly_chart(fig, use_container_width=True, theme='streamlit')
 with cc2:
- fig = px.bar(df7, x='user', y='action_volume',color='action', title='Top 10 user by volume of stake at each action')
+ fig = px.bar(df7, x='user', y='volume',color='action', title='Top 10 user by volume of stake at each action')
  fig.update_layout(legend_title=None, legend_y=0.5)
  st.plotly_chart(fig, use_container_width=True, theme='streamlit')
 
