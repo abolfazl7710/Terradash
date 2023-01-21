@@ -11,6 +11,7 @@ st.set_page_config(
 st.title("💵 Wallet")
 st.sidebar.success("💵 Wallet")
 
+@st.cache(ttl=10000)
 def querying_pagination(query_string):
     sdk = ShroomDK('8c37dc3a-fcf4-42a1-a860-337fa9931a2a')
     result_list = []
