@@ -14,6 +14,7 @@ Due to the large amount of data, the search may take some time. Please wait...
 """)
 st.sidebar.success("💰Supply")
 
+@st.cache(ttl=10000)
 def querying_pagination(query_string):
     sdk = ShroomDK('8c37dc3a-fcf4-42a1-a860-337fa9931a2a')
     result_list = []
